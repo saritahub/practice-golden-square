@@ -34,7 +34,7 @@ end
 ```
 
 ```ruby
-# File: lib/diary_reader.rb
+# File: lib/diary_entry_formatter.rb
 
 class DiaryEntryFormatter
   def initialize(diary_entry) # diary_entry is an instance of DiaryEntry

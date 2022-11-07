@@ -12,8 +12,8 @@ Learn to test classes with equality using RSpec.
 
 Testing classes is fundamentally similar to testing methods. However, classes
 perform a different job to methods. Instead of taking some arguments and giving
-a return value like a method, classes look after some state with a common group
-of methods (behaviour).
+a return value like a method, classes look after some data (state) with a common
+group of methods (behaviour).
 
 So we need to adapt our approach. Here is an example:
 
@@ -137,6 +137,7 @@ class Gratitudes
   def format
     formatted = "Be grateful for: "
     formatted += @gratitudes.join(", ")
+    return formatted
   end
 end
 ```

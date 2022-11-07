@@ -11,7 +11,7 @@ _Include the name of the method, its parameters, return value, and side effects.
 ```ruby
 # EXAMPLE
 
-# `extract_upper` extracts uppercase words from a list of words
+# `extract_upper` extracts uppercase words from a string
 uppercase_words = extract_uppercase(mixed_words)
 
 mixed_words: a string (e.g. "hello WORLD")

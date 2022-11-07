@@ -12,7 +12,7 @@ Learn to craft doubles for specific purposes.
 
 In the last bite we introduced doubles. Doubles are a tool that we use when we
 want to test that one class interacts with another in the correct way. We create
-a double that acts the same as the collaborator class, and then verify that that
+a double that acts the same as the collaborator class, and then verify that the
 class we're trying to test does its job correctly.
 
 To do this we have to create a double whose public interface matches the public

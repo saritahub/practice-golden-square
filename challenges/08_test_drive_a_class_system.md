@@ -16,8 +16,8 @@ again to test-driving a system involving multiple classes.
 This presents us with some new design challenges. We will cover those in the
 next challenge. For now, we will focus on test-driving.
 
-The principle here is similar jumping from methods to classes. We still need to
-generate examples and encode these as tests, followed up by implementing
+The principle here is similar to jumping from methods to classes. We still need
+to generate examples and encode these as tests, followed up by implementing
 behaviour to match those examples.
 
 Consider the following design for a music library.
@@ -103,7 +103,7 @@ track.format # => "Carte Blanche by Veracocha"
 ```
 
 When encoding these into tests, we are left with a surprising decision — which
-test suite do they go in? They test both `MusicPlayer` and `Track` — so which is
+test suite do they go in? They test both `MusicLibrary` and `Track` — so which is
 it? What do we call the tests?
 
 Tests for multiple classes acting together are called **integration tests** or
@@ -113,9 +113,9 @@ sometimes **feature tests**. Tests for a single class or method are called
 We create integration tests like this:
 
 ```ruby
-# File: spec/music_player_integration_spec.rb
+# File: spec/music_library_integration_spec.rb
 
-RSpec.describe "Music Player Integration" do
+RSpec.describe "Music Library Integration" do
   it "gets all tracks" do
     library = MusicLibrary.new
     track_1 = Track.new("Carte Blanche", "Veracocha")
@@ -133,9 +133,9 @@ However, this is quite a bit to test-drive in one go, so we comment out all but
 one line:
 
 ```ruby
-# File: spec/music_player_integration_spec.rb
+# File: spec/music_library_integration_spec.rb
 
-RSpec.describe "Music Player Integration" do
+RSpec.describe "Music Library Integration" do
   it "gets all tracks" do
     library = MusicLibrary.new
     # track_1 = Track.new("Carte Blanche", "Veracocha")
@@ -153,9 +153,9 @@ And then focus on our `MusicLibrary` class. We create a unit test for that
 class:
 
 ```ruby
-# File: spec/music_player_spec.rb
+# File: spec/music_library_spec.rb
 
-RSpec.describe MusicPlayer do
+RSpec.describe MusicLibrary do
   it "constructs" do
     library = MusicLibrary.new
   end
@@ -167,18 +167,18 @@ end
 Implement it:
 
 ```ruby
-# File: lib/music_player.rb
+# File: lib/music_library.rb
 
-class MusicPlayer
+class MusicLibrary
 end
 ```
 
 And then back to the integration test to uncomment the next line:
 
 ```ruby
-# File: spec/music_player_integration_spec.rb
+# File: spec/music_library_integration_spec.rb
 
-RSpec.describe "Music Player Integration" do
+RSpec.describe "Music Library Integration" do
   it "gets all tracks" do
     library = MusicLibrary.new
     track_1 = Track.new("Carte Blanche", "Veracocha")

@@ -50,6 +50,8 @@ RSpec.describe Reminder do
 end
 ```
 
+This will not work. <!-- OMITTED -->
+
 This is because errors behave in an unusual way. They stop the program
 immediately, so the method doesn't return anything any more — it doesn't even
 get that far!
