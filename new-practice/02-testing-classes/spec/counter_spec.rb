@@ -13,4 +13,13 @@ RSpec.describe 'counter' do
         expect(counter.report).to eq("Counted to 55 so far.")
     end 
 
+    context "Adds multiple numbers" do 
+        it "Adds three numbers, and returns a string with the total" do 
+            counter = Counter.new 
+            counter.add(55)
+            counter.add(100)
+            counter.add(200)
+            expect(counter.report).to eq("Counted to 355 so far.")
+        end 
+    end 
 end 
