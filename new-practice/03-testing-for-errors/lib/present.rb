@@ -2,7 +2,7 @@
 
 class Present
     def wrap(contents)
-      fail "A contents has already been wrapped." unless @contents.nil?
+      fail "Contents already wrapped." unless @contents.nil?
       @contents = contents
     end
   
