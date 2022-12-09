@@ -2,6 +2,12 @@ require 'string_builder'
 
 RSpec.describe "String builder" do 
     context "#size returns string length" do 
+        it "Initially returns 0 when no string input" do 
+            string = StringBuilder.new
+            expect(string.size).to eq(0)
+            expect(string.output).to eq("")
+        end 
+
         it "Returns 11 when the string input has 11 characters" do 
             string = StringBuilder.new
             string.add("Baked beans")
