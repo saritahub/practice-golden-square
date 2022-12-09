@@ -19,4 +19,12 @@ RSpec.describe "String builder" do
             expect(string.size).to eq(55)
         end 
     end 
+
+    context "#output returns the string" do 
+        it "Returns the string" do 
+            string = StringBuilder.new
+            string.add("Baked beans")
+            expect(string.output).to eq("Baked beans")
+        end 
+    end 
 end 
