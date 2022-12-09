@@ -11,4 +11,11 @@ RSpec.describe "Gratitudes" do
         gratitudes.add("Baked beans")
         expect(gratitudes.format).to eq("Be grateful for: Baked beans")
     end  
+
+    it "Returns a gratitude list with multiple items" do
+        gratitudes = Gratitudes.new
+        gratitudes.add("Baked beans")
+        gratitudes.add("Chickpeas")
+        expect(gratitudes.format).to eq("Be grateful for: Baked beans, Chickpeas")
+    end  
 end 
