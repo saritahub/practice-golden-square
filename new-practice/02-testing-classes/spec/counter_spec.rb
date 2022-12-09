@@ -1,6 +1,11 @@
 require 'counter'
 
 RSpec.describe 'counter' do 
+    it "Returns 0 when nothing is added" do 
+        counter = Counter.new 
+        expect(counter.report).to eq("Counted to 0 so far.")
+    end 
+
     it "Adds 1, and returns a string confirming 1 has been added" do
         counter = Counter.new 
         counter.add(1)
