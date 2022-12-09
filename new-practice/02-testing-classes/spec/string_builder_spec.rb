@@ -26,5 +26,16 @@ RSpec.describe "String builder" do
             string.add("Baked beans")
             expect(string.output).to eq("Baked beans")
         end 
-    end 
+
+        it "Returns a large string when multiple strings added" do 
+            string = StringBuilder.new
+            string.add("Baked beans")
+            string.add("Toast")
+            string.add("Chickpeas")
+            string.add("Roast potatoes")
+            string.add("Cheeze")
+            string.add("Ceylon tea")
+            expect(string.output).to eq("Baked beansToastChickpeasRoast potatoesCheezeCeylon tea")
+        end 
+    end  
 end 
