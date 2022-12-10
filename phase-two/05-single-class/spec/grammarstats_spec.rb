@@ -37,4 +37,12 @@ RSpec.describe GrammarStats do
             expect {grammarstats.check(123)}.to raise_error("Please enter a string with at least two characters!")
         end  
     end 
+
+    context "#percentage good" do 
+        it "Returns 100 when 1 text is passed through, and passes the grammar check" do 
+            grammarstats = GrammarStats.new 
+            grammarstats.check("This will pass!")
+            expect(grammarstats.percentage_good).to eq(100)
+        end 
+    end 
 end 
