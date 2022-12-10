@@ -19,7 +19,7 @@ RSpec.describe "DiaryEntry" do
             expect(diaryentry.contents).to eq("")
         end 
 
-        xit "Returns a string as the contents" do 
+        it "Returns a string as the contents" do 
             diaryentry = DiaryEntry.new("The title", "The contents")
             expect(diaryentry.contents).to eq("The contents")
         end 
