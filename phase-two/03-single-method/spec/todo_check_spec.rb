@@ -15,4 +15,10 @@ RSpec.describe "todo_check" do
         end 
     end 
 
+    context "Fails if string does not contain #TODO" do 
+        it "Returns false if the text doesn't contain #TODO" do
+            expect(todo_check("Go for a run")).to eq(false)
+        end 
+    end 
+
 end

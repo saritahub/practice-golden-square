@@ -3,5 +3,7 @@ def todo_check(text)
 
     if text.include?("#TODO")
         true
+    else
+        false
     end 
 end 
