@@ -4,7 +4,7 @@ class GrammarStats
     end
   
     def check(text) 
-        fail "Please enter a string with at least two characters!" if text.empty?
+        fail "Please enter a string with at least two characters!" if text.empty? || text.class != String
         first_char = text[0].upcase == text[0]
         last_char = text[-1] == "!"
 

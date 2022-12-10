@@ -26,5 +26,10 @@ RSpec.describe GrammarStats do
             grammarstats = GrammarStats.new
             expect(grammarstats.check("Hello")).to eq(false)
         end 
+
+        it "Fails if the input is not a string (array)" do 
+            grammarstats = GrammarStats.new 
+            expect {grammarstats.check([""])}.to raise_error("Please enter a string with at least two characters!")
+        end  
     end 
 end 
