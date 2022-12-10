@@ -27,7 +27,7 @@ reading_estimate = reading_time("Hello" * 400)
 reading_estimate = reading_time("Hello" * 500)
 # Returns 3 => (500.to_f / 200).ceil
 
-#4, rounds number up to nearest integer
+#5, rounds number up to nearest integer
 reading_estimate = reading_time("Hello" * 1500)
 # Returns 8
 
@@ -57,7 +57,7 @@ expect(reading_estimate = reading_time("Hello" * 1500)).to eq(8)
 #5 Fails if the input is an array
 expect {reading_estimate = reading_time([])}.to raise_error("Please input a string.")
 
-#5 Fails if the input is made up of integers
+#6 Fails if the input is made up of integers
 expect {reading_estimate = reading_time(123))}.to raise_error("Please input a string.")
 
 ```
