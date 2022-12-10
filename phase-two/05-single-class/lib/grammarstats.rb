@@ -10,15 +10,14 @@ class GrammarStats
         first_char = text[0].upcase == text[0]
         last_char = text[-1] == "!"
 
-        if first_char && last_char
-            @passing_text.push(text)
-            true
-        else 
-            false
-        end 
+        first_char && last_char ?  @passing_text.push(text) && true : false 
     end
   
     def percentage_good
-        ((@passing_text.length.to_f / @all_text.length)*100).ceil
+        if !@all_text.empty? && !@passing_text.empty?
+             ((@passing_text.length.to_f / @all_text.length)*100).ceil
+        else
+            0
+        end 
     end
-  end
+end
