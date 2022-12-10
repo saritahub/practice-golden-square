@@ -15,6 +15,10 @@ RSpec.describe "make_snippet" do
         it "Returns the first five words followed by ..." do 
             expect(make_snippet("There are more than five words here.")).to eq("There are more than five...")
          end 
+
+        it "Returns the first five words and ..." do 
+            expect(make_snippet("Repeat this " * 10)).to eq("Repeat this Repeat this Repeat...")
+         end 
     end 
 
 end 
