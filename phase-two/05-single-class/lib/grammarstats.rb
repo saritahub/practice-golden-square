@@ -5,6 +5,7 @@ class GrammarStats
   
     def check(text) 
         fail "Please enter a string with at least two characters!" if text.empty?
+        true 
     end
   
     def percentage_good
