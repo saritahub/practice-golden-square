@@ -23,4 +23,10 @@ RSpec.describe "reading_time" do
         end  
     end 
 
+    context "Edge cases: Fails if input is not a string" do 
+        it "Fails if the input is an array" do 
+            expect {reading_estimate = reading_time([])}.to raise_error("Please input a string.")
+        end 
+    end 
+
 end 
