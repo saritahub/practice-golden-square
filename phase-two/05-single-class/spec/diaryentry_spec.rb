@@ -31,9 +31,9 @@ RSpec.describe "DiaryEntry" do
             expect(diaryentry.count_words).to eq(0)
         end 
 
-        xit "Returns a string as the contents" do 
+        it "Returns the number of words in the contents as 2" do 
             diaryentry = DiaryEntry.new("The title", "The contents")
-            expect(diaryentry.contents).to eq("The contents")
+            expect(diaryentry.count_words).to eq(2)
         end 
     end 
 
