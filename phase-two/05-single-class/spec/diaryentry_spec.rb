@@ -25,6 +25,18 @@ RSpec.describe "DiaryEntry" do
         end 
     end 
 
+    context "#count_words" do 
+        it "Returns the number of words in the contents as an integer (0) when the contents is an empty string" do 
+            diaryentry = DiaryEntry.new("The title", "")
+            expect(diaryentry.count_words).to eq(0)
+        end 
+
+        xit "Returns a string as the contents" do 
+            diaryentry = DiaryEntry.new("The title", "The contents")
+            expect(diaryentry.contents).to eq("The contents")
+        end 
+    end 
+
     
 
 end 
