@@ -13,4 +13,18 @@ RSpec.describe "DiaryEntry" do
         end 
     end 
 
+    context "#contents" do 
+        it "Returns an empty string as the contents" do 
+            diaryentry = DiaryEntry.new("The title", "")
+            expect(diaryentry.contents).to eq("")
+        end 
+
+        xit "Returns a string as the contents" do 
+            diaryentry = DiaryEntry.new("The title", "The contents")
+            expect(diaryentry.contents).to eq("The contents")
+        end 
+    end 
+
+    
+
 end 
