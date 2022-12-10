@@ -1,7 +1,8 @@
 def grammar_check(text)
-    if text[0] == text[0].upcase
-        return true
+    text_check = text[0] == text[0].upcase && text[-1] == "!"
+    if text_check
+        true
     else
-        return false
+        false
     end  
 end 
