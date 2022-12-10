@@ -4,7 +4,7 @@ class ToDoList
     end
 
     def add(task)
-        fail "Please enter a string!" if task.empty?
+        fail "Please enter a string!" if task.class != String || task.empty?
 
         @task_list.push(task)
     end 

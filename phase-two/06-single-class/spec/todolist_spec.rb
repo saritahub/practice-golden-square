@@ -6,6 +6,11 @@ RSpec.describe ToDoList do
             todolist = ToDoList.new
             expect {todolist.add("")}.to raise_error("Please enter a string!") 
         end 
+
+        it "Raises an error if the task is not a string (array)" do 
+            todolist = ToDoList.new
+            expect {todolist.add([""])}.to raise_error("Please enter a string!")
+        end 
     end 
 
     context "#task_list" do 
