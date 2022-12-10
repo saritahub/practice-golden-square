@@ -44,5 +44,12 @@ RSpec.describe GrammarStats do
             grammarstats.check("This will pass!")
             expect(grammarstats.percentage_good).to eq(100)
         end 
+
+        it "Returns 50 when 2 texts are passed through, and 1 passes the grammar check" do 
+            grammarstats = GrammarStats.new 
+            grammarstats.check("This will pass!")
+            grammarstats.check("but this won't pass!")
+            expect(grammarstats.percentage_good).to eq(50)
+        end 
     end 
 end 
