@@ -6,8 +6,9 @@ class GrammarStats
     def check(text) 
         fail "Please enter a string with at least two characters!" if text.empty?
         first_char = text[0].upcase == text[0]
+        last_char = text[-1] == "!"
 
-        if first_char
+        if first_char && last_char
             true
         else 
             false
