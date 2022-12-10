@@ -19,6 +19,6 @@ class GrammarStats
     end
   
     def percentage_good
-        (@passing_text.length.to_f / @all_text.length)*100
+        ((@passing_text.length.to_f / @all_text.length)*100).ceil
     end
   end
