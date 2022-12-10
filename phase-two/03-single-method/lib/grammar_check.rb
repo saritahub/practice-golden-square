@@ -1,5 +1,5 @@
 def grammar_check(text)
-    fail "Please enter a string with two or more characters!" if text.class != String || text.length <= 2
+    fail "Please enter a string with two or more characters!" if text.class != String || text.empty?
 
     first_char = text[0] == text[0].upcase 
     last_char = text[-1] == "!"
