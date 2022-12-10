@@ -38,7 +38,7 @@ expect(grammar_check("hey!")).to eq(false)
 # 4 - Fails if the sentence does not end with a punctuation mark
 expect(grammar_check("Hey")).to eq(false)
 
-# 4 - Fails if the sentence does not start with a capital letter and end with a punctuation mark
+# 5 - Fails if the sentence does not start with a capital letter and end with a punctuation mark
 expect(grammar_check("hey")).to eq(false)
 
 
