@@ -15,5 +15,6 @@ class ToDoList
 
     def mark_complete(task)
         fail "There are no tasks set!" if @task_list.empty?
+        fail "This task does not exist!" if !@task_list.include?(task)
     end 
 end 

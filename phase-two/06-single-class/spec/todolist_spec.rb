@@ -28,5 +28,11 @@ RSpec.describe ToDoList do
             todolist = ToDoList.new
             expect {todolist.mark_complete("Walk at 3PM")}.to raise_error("There are no tasks set!")
         end 
+
+        it "Raises an error if the task does not exist" do 
+            todolist = ToDoList.new
+            todolist.add("Go shopping")
+            expect {todolist.mark_complete("Walk at 3PM")}.to raise_error("This task does not exist!")
+        end 
     end 
 end
