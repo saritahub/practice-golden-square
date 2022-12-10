@@ -11,4 +11,10 @@ RSpec.describe "make_snippet" do
         end 
     end 
 
+    context "Returns snippet if there are more than 5 words" do 
+        it "Returns the first five words followed by ..." do 
+            expect(make_snippet("There are more than five words here.")).to eq("There are more than five...")
+         end 
+    end 
+
 end 
