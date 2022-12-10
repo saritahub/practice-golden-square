@@ -14,6 +14,10 @@ RSpec.describe "reading_time" do
             expect(reading_estimate = reading_time("Hello " * 400)).to eq(2)        
         end  
 
+        it "Rounds up to the nearest integer. Returns 1, as the user can read 200 wpm and there is 1 word" do 
+            expect(reading_estimate = reading_time("Hello")).to eq(1)        
+        end  
+
         it "Rounds up to the nearest integer. Returns 3, as the user can read 200 wpm and there are 500 words" do 
             expect(reading_estimate = reading_time("Hello " * 500)).to eq(3)        
         end  
