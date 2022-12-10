@@ -31,4 +31,10 @@ RSpec.describe "todo_check" do
         end 
     end 
 
+    context "Checks for alternate cases for #TODO" do 
+        it "Returns true when text contains #toDo" do 
+            expect(todo_check("#toDo: Pick up car")).to eq(true)
+        end 
+    end 
+
 end
