@@ -26,11 +26,21 @@ end
 #1 - Checks if the sentence starts with a capital letter
 expect(grammar_check("Hey")).to eq(true)
 
-# 2 - Checks if the sentence ends with a punctation mark
-expect(grammar_check("hey!")).to eq(true)
-
-# 3 - Checks if the sentence starts with a capital letter and ends with a punctuation mark 
+# 2 - Checks if the sentence ends with a punctuation mark 
 expect(grammar_check("Hey!")).to eq(true)
+
+# 2 - Checks if the sentence starts with a capital letter and ends with a punctuation mark 
+expect(grammar_check("Hey there!")).to eq(true)
+
+# 3 - Fails if the sentence does not start with a capital letter
+expect(grammar_check("hey!")).to eq(false)
+
+# 4 - Fails if the sentence does not end with a punctuation mark
+expect(grammar_check("Hey")).to eq(false)
+
+# 4 - Fails if the sentence does not start with a capital letter and end with a punctuation mark
+expect(grammar_check("hey")).to eq(false)
+
 
 
 # EDGE CASES - not a string
