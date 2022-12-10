@@ -37,6 +37,13 @@ RSpec.describe "DiaryEntry" do
         end 
     end 
 
+    context "#reading_time(wpm)" do 
+        it "Returns an integer (2) to represent the estimated reading time for the contents at the given wpm" do 
+            diaryentry = DiaryEntry.new("The title", "The contents " * 200)
+            expect(diaryentry.reading_time(200)).to eq(2)
+        end 
+    end 
+
     
 
 end 
