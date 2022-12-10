@@ -6,8 +6,12 @@ RSpec.describe "todo_check" do
     end 
 
     context "Checks if a string contains to do" do 
-        it "Returns true when text contains #TODO" do 
+        it "Returns true when text is #TODO" do 
             expect(todo_check("#TODO")).to eq(true)
+        end 
+
+        it "Returns true when text contains #TODO" do 
+            expect(todo_check("#TODO: Go for a walk")).to eq(true)
         end 
     end 
 
