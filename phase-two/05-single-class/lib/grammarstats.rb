@@ -14,10 +14,6 @@ class GrammarStats
     end
   
     def percentage_good
-        if !@all_text.empty? && !@passing_text.empty?
-             ((@passing_text.length.to_f / @all_text.length)*100).ceil
-        else
-            0
-        end 
+        !@all_text.empty? && !@passing_text.empty? ? ((@passing_text.length.to_f / @all_text.length)*100).ceil : 0
     end
 end
