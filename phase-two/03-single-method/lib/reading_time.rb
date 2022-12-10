@@ -1,3 +1,7 @@
 def reading_time(text)
-    return 0
+    if text == " "
+        return 0
+    else 
+        return 1
+    end 
 end 
