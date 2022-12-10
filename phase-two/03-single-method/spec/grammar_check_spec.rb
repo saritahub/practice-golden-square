@@ -27,5 +27,9 @@ RSpec.describe "grammar_check" do
         it "Fails if text is an empty string" do 
             expect {grammar_check("")}.to raise_error("Please enter a string with two or more characters!")
         end 
+
+        it "Fails if text is an array input" do 
+            expect {grammar_check(["Array"])}.to raise_error("Please enter a string with two or more characters!")
+        end 
     end 
 end 
