@@ -5,7 +5,13 @@ class GrammarStats
   
     def check(text) 
         fail "Please enter a string with at least two characters!" if text.empty?
-        true 
+        first_char = text[0].upcase == text[0]
+
+        if first_char
+            true
+        else 
+            false
+        end 
     end
   
     def percentage_good

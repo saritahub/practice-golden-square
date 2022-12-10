@@ -12,9 +12,14 @@ RSpec.describe GrammarStats do
             expect(grammarstats.check("Hello")).to eq(true)
         end 
 
-        it "Returns true if the sentence starts ends with a punctuation mark" do 
+        it "Returns true if the sentence ends with a punctuation mark" do 
             grammarstats = GrammarStats.new
             expect(grammarstats.check("Hello!")).to eq(true)
+        end 
+
+        it "Returns false if the sentence does not start with a capital letter" do 
+            grammarstats = GrammarStats.new
+            expect(grammarstats.check("hello")).to eq(false)
         end 
     end 
 end 
