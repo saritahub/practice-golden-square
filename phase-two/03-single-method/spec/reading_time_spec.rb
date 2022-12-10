@@ -27,6 +27,10 @@ RSpec.describe "reading_time" do
         it "Fails if the input is an array" do 
             expect {reading_estimate = reading_time([])}.to raise_error("Please input a string.")
         end 
+
+        it "Fails if the input is an integer" do 
+            expect {reading_estimate = reading_time(123)}.to raise_error("Please input a string.")
+        end 
     end 
 
 end 
