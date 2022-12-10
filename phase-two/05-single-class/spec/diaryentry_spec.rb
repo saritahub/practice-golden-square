@@ -49,12 +49,16 @@ RSpec.describe "DiaryEntry" do
         end 
     end 
 
-    context "#reading_chunk(wpm, minutes)" do 
-        it "Returns the entire string if the user has the time / wpm" do 
-            diaryentry = DiaryEntry.new("The title", "The contents " * 100)
-            expect(diaryentry.reading_chunk(200, 2)).to eq("The contents " * 100)
-        end 
-    end 
-    
+    # context "#reading_chunk(wpm, minutes)" do 
+    #     it "Returns the entire string if the user has the time / wpm" do 
+    #         diaryentry = DiaryEntry.new("The title", "The contents " * 100)
+    #         expect(diaryentry.reading_chunk(200, 2)).to eq("The contents " * 100)
+    #     end 
 
+    #     it "Returns the part of the string if the contents is longer than the reading time estimate" do 
+    #         diaryentry = DiaryEntry.new("The title", "The contents " * 100)
+    #         expect(diaryentry.reading_chunk(200, 1)).to eq("The contents " * 50)
+    #     end 
+    # end 
+    
 end 
