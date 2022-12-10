@@ -6,7 +6,11 @@ def grammar_check(text)
 
     if first_char && last_char
         true
-    else
-        false
+    elsif !last_char && !first_char
+        "Sentence does not start with a capital letter and end in a puncutation mark!"
+    elsif !last_char
+        "Sentence does not end in a puncutation mark!"
+    elsif !first_char
+        "Sentence does not start with a capital letter!"
     end  
 end 
