@@ -7,4 +7,12 @@ RSpec.describe ToDoList do
             expect {todolist.add("")}.to raise_error("Please enter a string!") 
         end 
     end 
+
+    context "#task_list" do 
+        it "Adds a task to the list, and returns the task list" do 
+            todolist = ToDoList.new
+            todolist.add("Walk the dog")
+            expect(todolist.task_list).to eq("Walk the dog")
+        end 
+    end 
 end
