@@ -44,13 +44,13 @@ expect(grammar_check("hey")).to eq(false)
 
 
 # EDGE CASES - not a string
-# Fails if empty string
+# Fails if text is an empty string
 expect {grammar_check("")}.to raise_error("Please enter a string with two or more characters!")
 
-# Fails if array input
+# Fails if text is an array input
 expect {grammar_check([])}.to raise_error("Please enter a string with two or more characters!")
 
-# Fails if integer input
+# Fails if text is an integer input
 expect {grammar_check(123)}.to raise_error("Please enter a string with two or more characters!")
 
 ```

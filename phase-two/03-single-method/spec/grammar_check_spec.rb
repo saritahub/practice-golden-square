@@ -22,4 +22,10 @@ RSpec.describe "grammar_check" do
             expect(grammar_check("hey there")).to eq(false) 
         end 
     end 
+
+    context "Edge cases: Fails if input is an empty string or non-string Class" do 
+        it "Fails if text is an empty string" do 
+            expect {grammar_check("")}.to raise_error("Please enter a string with two or more characters!")
+        end 
+    end 
 end 
