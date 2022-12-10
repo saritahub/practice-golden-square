@@ -22,4 +22,11 @@ RSpec.describe ToDoList do
             expect(todolist.task_list).to eq("Walk the dog, Wash the car")
         end 
     end 
+
+    context "#task_list" do 
+        it "Raises an error if there are no tasks set" do 
+            todolist = ToDoList.new
+            expect {todolist.mark_complete("Walk at 3PM")}.to raise_error("There are no tasks set!")
+        end 
+    end 
 end

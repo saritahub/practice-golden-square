@@ -12,4 +12,8 @@ class ToDoList
     def task_list
         @task_list.join(", ")
     end 
+
+    def mark_complete(task)
+        fail "There are no tasks set!" if @task_list.empty?
+    end 
 end 
