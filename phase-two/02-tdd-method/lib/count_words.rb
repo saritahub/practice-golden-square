@@ -2,7 +2,8 @@
 # returns the number of words in that string.
 
 def count_words(sentence)
-    words = sentence.split(/[\s,']/)
+    delimiters = [' ,', /\s/, "'"]
+    words = sentence.scan(/\w+/)
 
     return words.length 
 end 
