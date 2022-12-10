@@ -21,4 +21,10 @@ RSpec.describe "todo_check" do
         end 
     end 
 
+    context "Fails if the input is not a string" do 
+        it "Fails when text input is an array" do 
+            expect { todo_check(["Hey"]) }.to raise_error "Please enter a string!"
+        end 
+    end 
+
 end
