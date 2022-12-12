@@ -43,13 +43,13 @@ expect {musictrack.add("")}.to raise_error("Please enter music track with the fo
 #2: Add a music track, and list this
 musictrack = MusicTrack.new
 musictrack.add("Toxic - Britney Spears")
-expect(music.list_tracks).to eq("Toxic - Britney Spears")
+expect(musictrack.list_tracks).to eq("Toxic - Britney Spears")
 
-#3: Add two music tracks, and list them both
+#3: Add two music tracks, and lists them both
 musictrack = MusicTrack.new
 musictrack.add("Toxic - Britney Spears")
 musictrack.add("High - 5SOS")
-expect(music.list_tracks).to eq("Toxic - Britney Spears, High - 5SOS")
+expect(musictrack.list_tracks).to eq("Toxic - Britney Spears, High - 5SOS")
 
 #4: Checks the format of the music tracks as title - artist
 musictrack = MusicTrack.new

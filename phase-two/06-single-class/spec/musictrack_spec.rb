@@ -19,5 +19,12 @@ RSpec.describe MusicTrack do
             musictrack.add("Toxic - Britney Spears")
             expect(musictrack.list_tracks).to eq("Toxic - Britney Spears")
         end 
+
+        it "Add two music tracks, and lists them both" do 
+            musictrack = MusicTrack.new
+            musictrack.add("Toxic - Britney Spears")
+            musictrack.add("High - 5SOS")
+            expect(musictrack.list_tracks).to eq("Toxic - Britney Spears, High - 5SOS")
+        end 
     end 
 end 

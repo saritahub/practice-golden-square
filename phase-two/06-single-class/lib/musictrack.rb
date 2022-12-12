@@ -12,6 +12,6 @@ class MusicTrack
     def list_tracks
         fail "No tracks added." if @tracks.empty?
 
-        @tracks.join(" ")
+        @tracks.join(", ")
     end 
 end
