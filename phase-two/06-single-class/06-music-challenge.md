@@ -63,6 +63,10 @@ expect {musictrack.add(["Dreamland - Glass Animals"])}.to raise_error("Please en
 musictrack = MusicTrack.new
 expect {musictrack.add(123)}.to raise_error("Please enter music track as a string")
 
+#7: List fails if there are no tracks
+musictrack = MusicTrack.new
+expect {musictrack.list}.to raise_error("No tracks added.")
+
 ```
 
 ## 4. Implement the Behaviour
