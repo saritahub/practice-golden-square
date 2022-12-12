@@ -4,6 +4,7 @@ class MusicTrack
     end
 
     def add(track)
+        fail "Please enter music track as a string" if track.class != String
         fail "Please enter music track with the format Title - Artist" if track.empty?
 
         @tracks.push(track)

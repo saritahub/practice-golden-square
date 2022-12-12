@@ -6,6 +6,11 @@ RSpec.describe MusicTrack do
             musictrack = MusicTrack.new
             expect {musictrack.add("")}.to raise_error("Please enter music track with the format Title - Artist")
         end
+
+        it "Fails if non-string input (array)" do 
+            musictrack = MusicTrack.new
+            expect {musictrack.add(["Dreamland - Glass Animals"])}.to raise_error("Please enter music track as a string")
+        end 
     end 
 
     context "#list" do 
