@@ -16,6 +16,11 @@ RSpec.describe MusicTrack do
             musictrack = MusicTrack.new
             expect {musictrack.add(123)}.to raise_error("Please enter music track as a string")
         end 
+
+        it "Checks the format of the music tracks as title - artist" do 
+            musictrack = MusicTrack.new
+            expect {musictrack.add("Dreamland Glass Animals")}.to raise_error("Please enter music track with the format Title - Artist")
+        end 
     end 
 
     context "#list" do 
