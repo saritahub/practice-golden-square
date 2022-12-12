@@ -63,5 +63,14 @@ RSpec.describe ToDoList do
             todolist.mark_complete("Walk")
             expect(todolist.task_list).to eq("Go shopping, Adopt a dog")
         end 
+
+        # xit "Only removes one task from the list if there are duplicates" do
+        #     todolist = ToDoList.new
+        #     todolist.add("Go shopping")
+        #     todolist.add("Make tea") 
+        #     todolist.add("Make tea") 
+        #     todolist.mark_complete("Make tea")
+        #     expect(todolist.task_list).to eq("Go shopping, Make tea")
+        # end  
     end 
 end

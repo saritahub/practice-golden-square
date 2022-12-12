@@ -22,7 +22,7 @@ Verbs
 ```ruby
 class ToDoList
   def initialize 
-    # ...
+    # Stores list of tasks 
   end
 
   def add(task) # task is a string
