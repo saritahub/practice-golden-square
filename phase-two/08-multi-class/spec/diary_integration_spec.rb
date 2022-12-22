@@ -26,11 +26,18 @@ RSpec.describe "Diary Integration" do
             expect(diary.all).to eq(['the contents', 'second contents'])
         end 
 
-        it 'Returns 1 when an empty string added' do 
+        it 'Returns 0 when an empty string added' do 
             diaryentry = DiaryEntry.new('the title', '')
             diary = Diary.new
             diary.add(diaryentry)
-            expect(diary.count_words).to eq(1)
+            expect(diary.count_words).to eq(0)
+        end 
+
+        it 'Counts the words of contents in DiaryEntry' do 
+            diaryentry = DiaryEntry.new('the title', 'the contents')
+            diary = Diary.new
+            diary.add(diaryentry)
+            expect(diary.count_words).to eq(2)
         end 
     end 
 end 
