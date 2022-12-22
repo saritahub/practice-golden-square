@@ -1,7 +1,7 @@
 # File: lib/diary.rb
 class Diary
     def initialize
-      p @all_entries = []
+      @all_entries = []
     end
   
     def add(entry) 
@@ -15,6 +15,7 @@ class Diary
     def count_words
       # Returns the number of words in all diary entries
       # HINT: This method should make use of the `count_words` method on DiaryEntry.
+      return @all_entries.length
     end
   
     def reading_time(wpm) # wpm is an integer representing
