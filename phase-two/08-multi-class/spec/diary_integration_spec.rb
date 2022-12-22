@@ -33,7 +33,7 @@ RSpec.describe "Diary Integration" do
             expect(diary.count_words).to eq(0)
         end 
 
-        xit 'Counts the words of contents in DiaryEntry' do 
+        it 'Counts the words of contents in DiaryEntry' do 
             diaryentry = DiaryEntry.new('the title', 'the contents')
             diary = Diary.new
             diary.add(diaryentry)
