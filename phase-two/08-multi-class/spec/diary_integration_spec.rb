@@ -16,5 +16,14 @@ RSpec.describe "Diary Integration" do
             diary.add(diaryentry)
             expect(diary.all).to eq(['the contents'])
         end 
+
+        it 'Returns all contents of DiaryEntry in an array' do 
+            diaryentry_1 = DiaryEntry.new('the title', 'the contents')
+            diaryentry_2 = DiaryEntry.new('the title', 'second contents')
+            diary = Diary.new
+            diary.add(diaryentry_1)
+            diary.add(diaryentry_2)
+            expect(diary.all).to eq(['the contents', 'second contents'])
+        end 
     end 
 end 
