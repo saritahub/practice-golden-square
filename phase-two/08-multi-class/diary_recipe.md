@@ -192,7 +192,7 @@ it 'Returns 0 when the wpm is 60 and there are 0 words in the contents' do
   diaryentry = DiaryEntry.new("The title", "")
   diary = Diary.new
   diary.add(diaryentry)
-  expect(diary.readingtime(60)).to eq(0)
+  expect(diary.reading_time(60)).to eq(0)
 end 
 
 
