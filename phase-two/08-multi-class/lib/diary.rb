@@ -9,16 +9,16 @@ class Diary
     end
   
     def all
-      p @all_entries
+      @all_entries
     end
   
     def count_words
-      return @all_entries.map do |entry|
-          entry.count_words
-      end.sum
+      #This is using count_words method from DiaryEntry
+      # Try this with map 
+      @all_entries.sum(&:count_words)
     end
   
     def reading_time(wpm) 
-      p (count_words/wpm).to_f
+      (count_words/wpm.to_f).ceil
     end
 end

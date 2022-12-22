@@ -1,6 +1,6 @@
 # File: lib/diary_entry.rb
 class DiaryEntry
-    def initialize(title, contents) # title, contents are strings
+    def initialize(title, contents) 
       @title = title
       @contents = contents
     end
@@ -14,15 +14,11 @@ class DiaryEntry
     end
   
     def count_words
-      if @contents.empty?
-        return 0 
-      else 
-        return @contents.split(" ").length 
-      end 
+      @contents.empty? ? 0 : @contents.split(" ").length 
     end
   
     def reading_time(wpm)
-      diary.reading_time
+      (count_words/wpm.to_f).ceil
     end
   
   end
