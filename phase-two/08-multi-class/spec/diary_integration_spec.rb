@@ -7,14 +7,14 @@ RSpec.describe "Diary Integration" do
             diaryentry = DiaryEntry.new('', '')
             diary = Diary.new
             diary.add(diaryentry)
-            expect(diary.all).to eq([])
+            expect(diary.all).to eq([''])
         end 
 
-        # it 'Returns one entry of DiaryEntry' do 
-        #     diaryentry = DiaryEntry.new('the title', 'the contents')
-        #     diary = Diary.new
-        #     diary.add(diaryentry)
-        #     expect(diary.all).to eq(['the contents'])
-        # end 
+        it 'Returns one entry of DiaryEntry' do 
+            diaryentry = DiaryEntry.new('the title', 'the contents')
+            diary = Diary.new
+            diary.add(diaryentry)
+            expect(diary.all).to eq(['the contents'])
+        end 
     end 
 end 

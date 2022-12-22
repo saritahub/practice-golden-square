@@ -1,15 +1,15 @@
 # File: lib/diary.rb
 class Diary
     def initialize
+      p @all_entries = []
     end
   
-    def add(entry) # entry is an instance of DiaryEntry
-      # Returns nothing
+    def add(entry) 
+      @all_entries.push(entry.contents)
     end
   
     def all
-      # Returns a list of instances of DiaryEntry
-      return []
+      @all_entries
     end
   
     def count_words
