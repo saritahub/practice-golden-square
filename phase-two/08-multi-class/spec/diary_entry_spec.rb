@@ -9,6 +9,11 @@ RSpec.describe "Diary Entry" do
     end 
 
     it 'Constructs a diary entry, and returns the number of words in contents' do
+        diaryentry = DiaryEntry.new("The title", "")
+        expect(diaryentry.count_words).to eq(0)
+    end 
+
+    it 'Constructs a diary entry, and returns the number of words in contents' do
         diaryentry = DiaryEntry.new("The title", "The contents")
         expect(diaryentry.count_words).to eq(2)
     end 

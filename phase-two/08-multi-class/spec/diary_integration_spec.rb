@@ -7,14 +7,14 @@ RSpec.describe "Diary Integration" do
             diaryentry = DiaryEntry.new('', '')
             diary = Diary.new
             diary.add(diaryentry)
-            expect(diary.all).to eq([''])
+            expect(diary.all).to eq([diaryentry])
         end 
 
         it 'Returns one entry of DiaryEntry' do 
             diaryentry = DiaryEntry.new('the title', 'the contents')
             diary = Diary.new
             diary.add(diaryentry)
-            expect(diary.all).to eq(['the contents'])
+            expect(diary.all).to eq([diaryentry])
         end 
 
         it 'Returns all contents of DiaryEntry in an array' do 
@@ -23,7 +23,7 @@ RSpec.describe "Diary Integration" do
             diary = Diary.new
             diary.add(diaryentry_1)
             diary.add(diaryentry_2)
-            expect(diary.all).to eq(['the contents', 'second contents'])
+            expect(diary.all).to eq([diaryentry_1, diaryentry_2])
         end 
 
         it 'Returns 0 when an empty string added' do 
@@ -33,25 +33,32 @@ RSpec.describe "Diary Integration" do
             expect(diary.count_words).to eq(0)
         end 
 
-        it 'Counts the words of contents in DiaryEntry' do 
+        xit 'Counts the words of contents in DiaryEntry' do 
             diaryentry = DiaryEntry.new('the title', 'the contents')
             diary = Diary.new
             diary.add(diaryentry)
             expect(diary.count_words).to eq(2)
         end 
 
-        it 'Returns 0 when the wpm is 60 and there are 0 words in the contents' do
+        xit 'Returns 0 when the wpm is 60 and there are 0 words in the contents' do
             diaryentry = DiaryEntry.new("The title", "")
             diary = Diary.new
             diary.add(diaryentry)
             expect(diary.reading_time(60)).to eq(0.0)
         end 
 
-        it 'Returns 10 when the wpm is 60 and there are 600 words in the contents' do
+        xit 'Returns 10 when the wpm is 60 and there are 600 words in the contents' do
             diaryentry = DiaryEntry.new("The title", "HI " * 600)
             diary = Diary.new
             diary.add(diaryentry)
             expect(diary.reading_time(60)).to eq(10.0)
+        end 
+
+        xit 'Returns 10 when the wpm is 60 and there are 600 words in the contents' do
+            diaryentry = DiaryEntry.new("The title", "HI " * 600)
+            diary = Diary.new
+            diary.add(diaryentry)
+            expect(diaryentry.reading_time(60)).to eq(10.0)
         end 
     end 
 end 
