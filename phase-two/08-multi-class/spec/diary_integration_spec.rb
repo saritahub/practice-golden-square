@@ -45,6 +45,13 @@ RSpec.describe "Diary Integration" do
             diary = Diary.new
             diary.add(diaryentry)
             expect(diary.reading_time(60)).to eq(0.0)
-          end 
+        end 
+
+        it 'Returns 10 when the wpm is 60 and there are 600 words in the contents' do
+            diaryentry = DiaryEntry.new("The title", "HI " * 600)
+            diary = Diary.new
+            diary.add(diaryentry)
+            expect(diary.reading_time(60)).to eq(10.0)
+        end 
     end 
 end 
