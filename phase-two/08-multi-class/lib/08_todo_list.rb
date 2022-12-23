@@ -22,6 +22,7 @@ class ToDoList
     end 
 
     def incomplete
+        fail "No tasks added!" if @all_tasks.empty?
         @all_tasks.each do |task|
             if task.done? == false
                 @incomplete_tasks.push(task)

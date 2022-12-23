@@ -138,19 +138,19 @@ end
 # 9 
 it 'Incomplete raises an error if there are no tasks' do 
     todolist = ToDoList.new
-    expect {ToDoList.incomplete}.to raise_error("No tasks added!")
+    expect {todolist.incomplete}.to raise_error("No tasks added!")
 end 
 
 # 10 
 it 'Complete raises an error if there are no tasks' do 
     todolist = ToDoList.new
-    expect {ToDoList.complete}.to raise_error("No tasks added!")
+    expect {todolist.complete}.to raise_error("No tasks added!")
 end 
 
 # 11
 it 'Complete raises an error if there are no tasks' do 
     todolist = ToDoList.new
-    expect {ToDoList.give_up!}.to raise_error("No tasks added!")
+    expect {todolist.give_up!}.to raise_error("No tasks added!")
 end 
 
 
