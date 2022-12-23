@@ -29,4 +29,10 @@ class ToDoList
         end
         return @incomplete_tasks
     end 
+
+    def give_up!
+        @all_tasks.each do |task|
+            task.mark_done!
+        end 
+    end
 end
