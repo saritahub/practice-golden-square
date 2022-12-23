@@ -15,9 +15,7 @@ class ToDoList
     def complete
         fail_conditions
         @all_tasks.each do |task|
-            if task.done? == true
-                @completed_tasks.push(task)
-            end 
+            @completed_tasks.push(task) if task.done? == true 
         end
         @completed_tasks
     end 
@@ -25,9 +23,7 @@ class ToDoList
     def incomplete
         fail_conditions
         @all_tasks.each do |task|
-            if task.done? == false
-                @incomplete_tasks.push(task)
-            end 
+            @incomplete_tasks.push(task) if task.done? == false
         end
         @incomplete_tasks
     end 
