@@ -16,7 +16,7 @@ class ToDo
     end 
 
     def done?
-        return @done
+        @done
     end
   
 end

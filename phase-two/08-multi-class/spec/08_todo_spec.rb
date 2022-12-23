@@ -24,10 +24,5 @@ RSpec.describe "ToDo" do
         it 'Raises error if the input is not a string (integer)' do 
             expect { todo_1 = ToDo.new(123)}.to raise_error("Please enter the task as a string!")
         end
-        
-        xit 'Raises an error if the task does not exist' do 
-            todo = ToDo.new('Walk the dog')
-            expect {todo_1.task}.to raise_error("This task does not exist")
-        end 
     end
 end 

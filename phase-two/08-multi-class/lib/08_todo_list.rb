@@ -13,29 +13,34 @@ class ToDoList
     end
 
     def complete
-        fail "No tasks added!" if @all_tasks.empty?
+        fail_conditions
         @all_tasks.each do |task|
             if task.done? == true
                 @completed_tasks.push(task)
             end 
         end
-        return @completed_tasks
+        @completed_tasks
     end 
 
     def incomplete
-        fail "No tasks added!" if @all_tasks.empty?
+        fail_conditions
         @all_tasks.each do |task|
             if task.done? == false
                 @incomplete_tasks.push(task)
             end 
         end
-        return @incomplete_tasks
+        @incomplete_tasks
     end 
 
     def give_up!
-        fail "No tasks added!" if @all_tasks.empty?
+        fail_conditions
         @all_tasks.each do |task|
             task.mark_done!
         end 
     end
+
+    private
+    def fail_conditions 
+        fail "No tasks added!" if @all_tasks.empty?
+    end 
 end
