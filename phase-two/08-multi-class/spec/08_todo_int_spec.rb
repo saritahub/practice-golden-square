@@ -59,6 +59,13 @@ RSpec.describe "ToDo integration" do
             expect(todolist.complete).to eq([todo_1, todo_2])
         end 
 
+        it 'Returns false if the task is not done' do 
+            todolist = ToDoList.new
+            todo_1 = ToDo.new('Go shopping') 
+            todolist.add(todo_1)  
+            expect(todo_1.done?).to eq(false)
+        end 
+
 
     end 
 end 
