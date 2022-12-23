@@ -17,7 +17,11 @@ class ToDoList
     end 
 
     def complete
-            @all_tasks.delete(@task)
-            @completed_tasks.push(@task)
+        @all_tasks.each do |task|
+            if task.mark_done! == true
+                @completed_tasks.push(task)
+            end 
+        end 
+        return @completed_tasks
     end 
 end

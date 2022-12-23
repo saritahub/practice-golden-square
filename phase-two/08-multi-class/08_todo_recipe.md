@@ -77,6 +77,7 @@ end
 it 'Marks a task as complete, and returns it as completed' do 
     todolist = ToDoList.new
     todo_1 = ToDo.new('Go shopping')  
+    todolist.add(todo_1)
     todo_1.mark_done!
     expect(todolist.complete).to eq(['Go shopping'])
 end 
@@ -86,34 +87,41 @@ it 'Marks two task as complete, and returns them as completed' do
     todolist = ToDoList.new
     todo_1 = ToDo.new('Go shopping')  
     todo_2 = ToDo.new('Wash the car')  
+    todolist.add(todo_1)
+    todolist.add(todo_2)
     todo_1.mark_done!
     todo_2.mark_done!
-    expect(todolist.complete).to eq(['Go shopping', 'Wash the car'])
+    expect(todolist.complete).to eq([todo_1, todo_2])
 end 
 
 #5
 it 'Adds two tasks, marks one as complete. Returns the completed and incomplete tasks' do 
     todolist = ToDoList.new
     todo_1 = ToDo.new('Go shopping')  
-    todo_2 = ToDo.new('Wash the car')  
+    todo_2 = ToDo.new('Wash the car') 
+    todolist.add(todo_1) 
+    todolist.add(todo_2) 
     todo_1.mark_done!
-    expect(todolist.complete).to eq(['Go shopping'])
-    expect(todolist.incomplete).to eq(['Wash the car'])
+    expect(todolist.complete).to eq([todo_1])
+    expect(todolist.incomplete).to eq([todo_2])
 end 
 
 #6 
 it 'Marks all tasks as complete' do 
     todolist = ToDoList.new
     todo_1 = ToDo.new('Go shopping')  
-    todo_2 = ToDo.new('Wash the car')  
+    todo_2 = ToDo.new('Wash the car') 
+    todolist.add(todo_1) 
+    todolist.add(todo_2) 
     todolist.give_up!
-    expect(todolist.complete).to eq(['Go shopping', 'Wash the car'])
+    expect(todolist.complete).to eq([todo_1, todo_2])
 end 
 
 #7
 it 'Returns false if the task is not done' do 
     todolist = ToDoList.new
-    todo_1 = ToDo.new('Go shopping')  
+    todo_1 = ToDo.new('Go shopping') 
+    todolist.add(todo_1)  
     expect(todo_1.done?).to eq(false)
 end 
 
@@ -121,6 +129,7 @@ end
 it 'Returns true if the task is done' do 
     todolist = ToDoList.new
     todo_1 = ToDo.new('Go shopping')  
+    todolist.add(todo_1)
     todo_1.mark_done!
     expect(todo_1.done?).to eq(true)
 end 
