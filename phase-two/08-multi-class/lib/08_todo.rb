@@ -6,6 +6,10 @@ class ToDo
         @done = false
     end
 
+    def task
+        @task
+    end 
+
     def mark_done!
         @done = true 
     end 
