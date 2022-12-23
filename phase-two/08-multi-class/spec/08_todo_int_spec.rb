@@ -32,10 +32,23 @@ RSpec.describe "ToDo integration" do
             todo_1 = ToDo.new('Go shopping')  
             todo_2 = ToDo.new('Wash the car')  
             todolist.add(todo_1)
-            todo_1.mark_done!
             todolist.add(todo_2)
+            todo_1.mark_done!
             todo_2.mark_done!
             expect(todolist.complete).to eq([todo_1, todo_2])
+        end  
+
+        it 'Adds two tasks, marks one as complete. Returns the completed and incomplete tasks' do
+            todolist = ToDoList.new
+            todo_12 = ToDo.new('Go shopping')
+            todo_13 = ToDo.new('Wash the car')
+            todolist.add(todo_12)
+            todolist.add(todo_13)
+            todo_12.mark_done!
+            expect(todolist.complete).to eq([todo_12])
+            expect(todolist.incomplete).to eq([todo_13])
         end 
+
+
     end 
 end 

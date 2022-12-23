@@ -9,5 +9,9 @@ class ToDo
     def mark_done!
         @done = true 
     end 
+
+    def done?
+        return @done
+    end
   
 end
