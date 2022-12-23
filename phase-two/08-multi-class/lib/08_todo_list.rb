@@ -33,6 +33,7 @@ class ToDoList
     end 
 
     def give_up!
+        fail "No tasks added!" if @all_tasks.empty?
         @all_tasks.each do |task|
             task.mark_done!
         end 

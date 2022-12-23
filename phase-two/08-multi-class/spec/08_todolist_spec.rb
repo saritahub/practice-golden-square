@@ -13,7 +13,7 @@ RSpec.describe "ToDoList" do
             expect {todolist.complete}.to raise_error("No tasks added!")
         end 
         
-        xit 'Give_up raises an error if there are no tasks' do 
+        it 'Give_up raises an error if there are no tasks' do 
             todolist = ToDoList.new
             expect {todolist.give_up!}.to raise_error("No tasks added!")
         end
