@@ -15,7 +15,11 @@ class Diary
     def count_words
       #This is using count_words method from DiaryEntry
       # Try this with map 
-      @all_entries.sum(&:count_words)
+      #@all_entries.sum(&:count_words)
+
+      @all_entries.map { |entry|
+        entry.count_words
+      }.sum 
     end
   
     def reading_time(wpm) 
