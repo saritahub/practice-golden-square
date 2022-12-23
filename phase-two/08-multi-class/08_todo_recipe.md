@@ -61,7 +61,7 @@ it 'Adds a task and returns this as incomplete' do
     todolist = ToDoList.new
     todo = ToDo.new('Go shopping')
     todolist.add(todo)
-    expect(todo.incomplete).to eq(['Go shopping'])
+    expect(todolist.incomplete).to eq(['Go shopping'])
 end 
 
 #2 
@@ -70,7 +70,7 @@ it 'Adds multiple tasks and returns a list of incomplete todo tasks' do
     todo_1 = ToDo.new('Go shopping')
     todo_2 = ToDo.new('Meditate')
     todolist.add(todo)
-    expect(todo.incomplete).to eq(['Go shopping', 'Meditate'])
+    expect(todolist.incomplete).to eq(['Go shopping', 'Meditate'])
 end 
 
 #3
@@ -78,7 +78,7 @@ it 'Marks a task as complete, and returns it as completed' do
     todolist = ToDoList.new
     todo_1 = ToDo.new('Go shopping')  
     todo_1.mark_done!
-    expect(ToDoList.complete).to eq(['Go shopping'])
+    expect(todolist.complete).to eq(['Go shopping'])
 end 
 
 #4
@@ -88,7 +88,7 @@ it 'Marks two task as complete, and returns them as completed' do
     todo_2 = ToDo.new('Wash the car')  
     todo_1.mark_done!
     todo_2.mark_done!
-    expect(ToDoList.complete).to eq(['Go shopping', 'Wash the car'])
+    expect(todolist.complete).to eq(['Go shopping', 'Wash the car'])
 end 
 
 #5
@@ -97,8 +97,8 @@ it 'Adds two tasks, marks one as complete. Returns the completed and incomplete 
     todo_1 = ToDo.new('Go shopping')  
     todo_2 = ToDo.new('Wash the car')  
     todo_1.mark_done!
-    expect(ToDoList.complete).to eq(['Go shopping'])
-    expect(ToDoList.incomplete).to eq(['Wash the car'])
+    expect(todolist.complete).to eq(['Go shopping'])
+    expect(todolist.incomplete).to eq(['Wash the car'])
 end 
 
 #6 
@@ -107,7 +107,7 @@ it 'Marks all tasks as complete' do
     todo_1 = ToDo.new('Go shopping')  
     todo_2 = ToDo.new('Wash the car')  
     todolist.give_up!
-    expect(ToDoList.complete).to eq(['Go shopping', 'Wash the car'])
+    expect(todolist.complete).to eq(['Go shopping', 'Wash the car'])
 end 
 
 #7

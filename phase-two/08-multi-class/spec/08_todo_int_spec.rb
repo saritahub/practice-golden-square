@@ -7,7 +7,16 @@ RSpec.describe "ToDo integration" do
             todolist = ToDoList.new
             todo = ToDo.new('Go shopping')
             todolist.add(todo)
-            expect(todo.incomplete).to eq(['Go shopping'])
+            expect(todolist.incomplete).to eq([todo])
+        end 
+
+        it 'Adds multiple tasks and returns a list of incomplete todo tasks' do 
+            todolist = ToDoList.new
+            todo_1 = ToDo.new('Go shopping')
+            todo_2 = ToDo.new('Meditate')
+            todolist.add(todo_1)
+            todolist.add(todo_2)
+            expect(todolist.incomplete).to eq([todo_1, todo_2])
         end 
     end 
 end 

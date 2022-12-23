@@ -1,4 +1,4 @@
-# lib/08_todo.rb
+# File: lib/08_todo.rb
 
 class ToDo
     def initialize(task)
@@ -6,7 +6,5 @@ class ToDo
         
     end
 
-    def incomplete
-        return [@task]
-    end 
+  
 end
