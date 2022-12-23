@@ -2,6 +2,7 @@
 
 class ToDo
     def initialize(task)
+        fail "Please enter the task as a string!" if task.class != String
         @task = task
         @done = false
     end
