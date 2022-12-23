@@ -13,6 +13,7 @@ class ToDoList
     end
 
     def complete
+        fail "No tasks added!" if @all_tasks.empty?
         @all_tasks.each do |task|
             if task.done? == true
                 @completed_tasks.push(task)
