@@ -21,7 +21,7 @@ RSpec.describe "ToDo" do
             expect { todo_1 = ToDo.new(["Cake"])}.to raise_error("Please enter the task as a string!")
         end
         
-        xit 'Raises error if the input is not a string (integer)' do 
+        it 'Raises error if the input is not a string (integer)' do 
             expect { todo_1 = ToDo.new(123)}.to raise_error("Please enter the task as a string!")
         end
         
