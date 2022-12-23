@@ -66,6 +66,14 @@ RSpec.describe "ToDo integration" do
             expect(todo_1.done?).to eq(false)
         end 
 
+        it 'Returns true if the task is done' do 
+            todolist = ToDoList.new
+            todo_1 = ToDo.new('Go shopping')  
+            todolist.add(todo_1)
+            todo_1.mark_done!
+            expect(todo_1.done?).to eq(true)
+        end 
+
 
     end 
 end 
