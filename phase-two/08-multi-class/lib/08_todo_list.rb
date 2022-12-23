@@ -3,15 +3,21 @@ require '08_todo'
 
 class ToDoList
     def initialize
-        @task_list = []
+        @all_tasks = []
+        @completed_tasks = [] 
     end
 
     def add(task)
         @task = task 
-        @task_list.push(@task)
+        @all_tasks.push(@task)
     end
 
     def incomplete
-        return @task_list
+        return @all_tasks
+    end 
+
+    def complete
+            @all_tasks.delete(@task)
+            @completed_tasks.push(@task)
     end 
 end

@@ -3,8 +3,11 @@
 class ToDo
     def initialize(task)
         @task = task
-        
+        @done = false
     end
 
+    def mark_done!
+        @done = true 
+    end 
   
 end

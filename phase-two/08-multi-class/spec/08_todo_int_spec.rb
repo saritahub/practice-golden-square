@@ -18,5 +18,13 @@ RSpec.describe "ToDo integration" do
             todolist.add(todo_2)
             expect(todolist.incomplete).to eq([todo_1, todo_2])
         end 
+
+        it 'Marks a task as complete, and returns it as completed' do 
+            todolist = ToDoList.new
+            todo_1 = ToDo.new('Go shopping')  
+            todolist.add(todo_1) 
+            todo_1.mark_done!
+            expect(todolist.complete).to eq([todo_1])
+        end 
     end 
 end 
