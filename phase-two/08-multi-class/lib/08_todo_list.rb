@@ -14,6 +14,8 @@ class ToDoList
 
     def complete
         fail_conditions
+
+        # Change to map! so only one array needed 
         @all_tasks.each do |task|
             @completed_tasks.push(task) if task.done? == true 
         end
