@@ -287,8 +287,6 @@ it 'Prompts to add a task if task list empty' do
     expect{todolist.task_list}.to raise_error 'No tasks added!'
 end
 
-
-
 ```
 
 ## 4. Create Examples as Unit Tests
