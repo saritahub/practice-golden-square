@@ -18,7 +18,7 @@ class Journal
 
     def extract_phone_numbers
         @all_entries.each do |entry|
-            @phone_numbers.push(entry.contents.scan(/\d+/)).flatten!
+            @phone_numbers.push(entry.contents.scan(/\d{11}+/)).flatten!
         end
     end 
 
