@@ -44,11 +44,13 @@ RSpec.describe 'Journal Entry' do
             diary.extract_phone_numbers
             expect(diary.phone_numbers).to eq(['07000000000', '07909090909'])
         end 
-
-
-
     end 
 
+    context 'Edge cases' do 
+        it 'Prompts for a string input for the diary entry title' do 
+            expect { diaryentry = JournalEntry.new(123, 'contents')}.to raise_error 'Please enter a string with 1 or more characters for the title'
+        end 
+    end 
 
 
 
