@@ -80,7 +80,7 @@ Class diagrams
     ┌─────────────────────────────────────┐      ┌─────────────────────────────────────┐
     │   Diary                             │      │  ToDoList                           │
     │                                     │      │                                     │
-    │   initialize                        │      │  initialize                          │
+    │   initialize                        │      │  initialize                         |
     │   add(entry)                        │      │  add(task)                          │
     │   all_entries                       │      │  task_list                          │
     │   all_phonenumbers                  │◄─────┤                                     │
@@ -129,7 +129,7 @@ class Diary
 end
 
 
-class Diary
+class DiaryEntry
     def initialize(title, contents)
         #Creates an entry with the title and contents
     end 
@@ -180,13 +180,10 @@ combinations that reflect the ways in which the system will be used._
 ```ruby
 # EXAMPLE
 
-# Gets all tracks
-library = MusicLibrary.new
-track_1 = Track.new("Carte Blanche", "Veracocha")
-track_2 = Track.new("Synaesthesia", "The Thrillseekers")
-library.add(track_1)
-library.add(track_2)
-library.all # => [track_1, track_2]
+# Gets all diary entries 
+diary = Diar
+
+
 ```
 
 ## 4. Create Examples as Unit Tests
