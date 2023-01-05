@@ -3,7 +3,8 @@
 class JournalEntry
     def initialize(title, contents)
         fail 'Please enter a string with 1 or more characters for the title' if title.class != String || title.empty?
-        fail 'Please enter a string with 1 or more characters for the contents' if contents.class != String 
+        fail 'Please enter a string with 1 or more characters for the contents' if contents.class != String || contents.empty?
+        
         @title = title
         @contents = contents 
     end 
