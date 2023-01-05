@@ -35,6 +35,16 @@ RSpec.describe 'Journal Entry' do
             expect(diary.phone_numbers).to eq(['07000000000'])
         end 
 
+        it 'Extracts multiple phone numbers from the diary entries and returns them in an array' do 
+            diaryentry_1 = JournalEntry.new('Phone number included...', 'The phone number is 07000000000')
+            diaryentry_2 = JournalEntry.new('Another phone number included...', 'The phone number is 07909090909')
+            diary = Journal.new 
+            diary.add(diaryentry_1)
+            diary.add(diaryentry_2)
+            diary.extract_phone_numbers
+            expect(diary.phone_numbers).to eq(['07000000000', '07909090909'])
+        end 
+
 
 
     end 
