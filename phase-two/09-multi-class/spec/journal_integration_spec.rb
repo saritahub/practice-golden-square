@@ -50,6 +50,10 @@ RSpec.describe 'Journal Entry' do
         it 'Prompts for a string input for the diary entry title' do 
             expect { diaryentry = JournalEntry.new(123, 'contents')}.to raise_error 'Please enter a string with 1 or more characters for the title'
         end 
+
+        it 'Prompts for a string input for the diary entry contents' do 
+            expect { diaryentry = JournalEntry.new('the title', 123)}.to raise_error 'Please enter a string with 1 or more characters for the contents'
+        end 
     end 
 
 

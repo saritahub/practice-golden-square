@@ -314,7 +314,7 @@ end
 
 #2
 it 'Prompts for a string input for the diary entry contents' do 
-    expect { diaryentry = DiaryEntry.new('the title', 123)}.to raise_error 'Please enter a string with 1 or more characters for the contents'
+    expect { diaryentry = JournalEntry.new('the title', 123)}.to raise_error 'Please enter a string with 1 or more characters for the contents'
 end 
 
 #3
