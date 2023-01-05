@@ -27,6 +27,14 @@ RSpec.describe 'Journal Entry' do
             expect(diary.phone_numbers).to eq(['07000000000'])
         end 
 
+        it 'Longer string: Extracts a phone number from the diary entry and returns this in an array' do 
+            diaryentry = JournalEntry.new('Phone number included...', 'The phone number is 07000000000')
+            diary = Journal.new 
+            diary.add(diaryentry)
+            diary.extract_phone_numbers
+            expect(diary.phone_numbers).to eq(['07000000000'])
+        end 
+
 
 
     end 
