@@ -1,6 +1,6 @@
 #File 09_todolist.rb
 
-class ToDoList
+class TaskList
     def initialize
         @task_list = []
     end
