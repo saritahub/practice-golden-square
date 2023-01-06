@@ -62,6 +62,16 @@ RSpec.describe 'Journal Entry' do
         it 'Prompts for a longer input if the diary entry contents is empty' do 
             expect { diaryentry = JournalEntry.new('the title', '')}.to raise_error 'Please enter a string with 1 or more characters for the contents'
         end 
+
+        it 'Ignores numbers less than 11 numbers long the diary entries' do 
+            diaryentry_1 = JournalEntry.new('Phone number included...', 'The phone number is 07000000000')
+            diaryentry_2 = JournalEntry.new('False phone number included...', 'The phone number is 0790')
+            diary = Journal.new 
+            diary.add_journal(diaryentry_1)
+            diary.add_journal(diaryentry_2)
+            diary.extract_phone_numbers
+            expect(diary.phone_numbers).to eq(['07000000000'])
+        end 
     end 
 
 

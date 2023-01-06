@@ -255,7 +255,7 @@ end
 it 'Ignores numbers less than 11 numbers long the diary entries' do 
     diaryentry_1 = JournalEntry.new('Phone number included...', 'The phone number is 07000000000')
     diaryentry_2 = JournalEntry.new('False phone number included...', 'The phone number is 0790')
-    diary = Diary.new 
+    diary = Journal.new 
     diary.add(diaryentry_1)
     diary.add(diaryentry_2)
     diary.extract_phone_numbers
