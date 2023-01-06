@@ -10,6 +10,7 @@ class TaskList
     end 
 
     def task_list
+    fail 'No tasks added!' if @task_list.empty?
         @task_list
     end 
 end
