@@ -7,6 +7,7 @@ class Journal
         @all_entries = []
         @phone_numbers = []
         @task_list = []
+        @all_contents = []
     end 
 
     def add_journal(entry)
@@ -22,9 +23,17 @@ class Journal
     end 
 
     def extract_phone_numbers
-        @all_entries.each do |entry|
-            @phone_numbers.push(entry.contents.scan(/\d{11}+/)).flatten!
+        #Extracts numbers that have 11 digits only
+        @all_entries.each do |entry| 
+           if entry.contents.scan(/\d+/).join(" ").length == 11
+                @phone_numbers.push(entry.contents.scan(/\d{11}+/)).flatten!
+           end 
         end
+
+
+        # @all_entries.each do |entry|
+        #     @phone_numbers.push(entry.contents.scan(/\d{11}+/)).flatten!
+        # end
     end 
 
     def phone_numbers
