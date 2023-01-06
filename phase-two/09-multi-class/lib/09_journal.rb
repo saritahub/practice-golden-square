@@ -29,7 +29,7 @@ class Journal
     
     def phone_numbers
         fail 'No phone numbers present in your diary entries!' if @phone_numbers.empty?
-        @phone_numbers
+        @phone_numbers.uniq
     end 
     
     def task_list 

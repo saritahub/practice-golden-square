@@ -89,5 +89,15 @@ RSpec.describe 'Journal Entry' do
             diary.add_journal(diaryentry)
             expect {diary.phone_numbers}.to raise_error('No phone numbers present in your diary entries!')
         end 
+
+        it 'Removes duplicate phone numbers from the contents' do 
+            diaryentry_1 = JournalEntry.new('Phone number included...', 'The phone number is 07000000000')
+            diaryentry_2 = JournalEntry.new('Duplicate phone number included...', 'The phone number is 07000000000')
+            diary = Journal.new 
+            diary.add_journal(diaryentry_1)
+            diary.add_journal(diaryentry_2)
+            diary.extract_phone_numbers
+            expect(diary.phone_numbers).to eq(['07000000000'])
+        end 
     end 
 end 
