@@ -89,13 +89,5 @@ RSpec.describe 'Journal Entry' do
             diary.add_journal(diaryentry)
             expect {diary.phone_numbers}.to raise_error('No phone numbers present in your diary entries!')
         end 
-
-        
-
     end 
-
-
-
-
-
 end 

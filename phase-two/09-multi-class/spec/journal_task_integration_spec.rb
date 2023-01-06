@@ -26,6 +26,4 @@ RSpec.describe 'Journal task integration' do
             expect(diary.task_list).to eq([todo_1, todo_2])
         end 
     end 
-
-
 end 

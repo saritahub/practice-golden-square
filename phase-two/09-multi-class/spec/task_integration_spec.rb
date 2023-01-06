@@ -18,8 +18,5 @@ RSpec.describe 'Todo integration' do
             todolist.add(todo_2)
             expect(todolist.task_list).to eq([todo_1, todo_2])
         end 
-
-
-
     end 
 end 

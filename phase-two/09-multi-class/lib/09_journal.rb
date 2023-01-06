@@ -35,5 +35,4 @@ class Journal
     def task_list 
         @task_list     
     end 
- 
 end 
