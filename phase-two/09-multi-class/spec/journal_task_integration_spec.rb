@@ -13,6 +13,18 @@ RSpec.describe 'Journal task integration' do
             diary.add_task(todo)
             expect(diary.task_list).to eq([todo])
         end 
+
+        it 'Diary returns the task list with multiple items' do 
+            diary = Journal.new 
+            todo_1 = ToDoTask.new('Grow veggies')
+            todo_2 = ToDoTask.new('Run')
+            todolist = TaskList.new 
+            todolist.add(todo_1)
+            todolist.add(todo_2)
+            diary.add_task(todo_1)
+            diary.add_task(todo_2)
+            expect(diary.task_list).to eq([todo_1, todo_2])
+        end 
     end 
 
 
