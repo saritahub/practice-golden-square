@@ -69,7 +69,7 @@ Class diagrams
 
 
                                                  ┌─────────────────────────────────────┐
-                                                 │  ToDoTask                               │
+                                                 │  ToDoTask                           |
                                                  │                                     │
                                                  │  initialize(task)                   │
                                                  │  task                               │
@@ -78,7 +78,7 @@ Class diagrams
                                                                 │     Owns a list of
                                                                 ▼
     ┌─────────────────────────────────────┐      ┌─────────────────────────────────────┐
-    │   Journal                             │      │  ToDoList                           │
+    │   Journal                           │      │  ToDoList                           │
     │                                     │      │                                     │
     │   initialize                        │      │  initialize                         |
     │   add(entry)                        │      │  add(task)                          │
@@ -90,7 +90,7 @@ Class diagrams
                    │
                    ▼    Owns a list of
     ┌─────────────────────────────────────┐
-    │   JournalEntry                        │
+    │   JournalEntry                      │
     │                                     │
     │   initialize(title, contents)       │
     │   title                             │
@@ -116,7 +116,6 @@ class Journal
 
     def extract_phone_numbers
         #Extracts phone number from diary entries
-        #Private method?
     end 
 
     def phone_numbers
