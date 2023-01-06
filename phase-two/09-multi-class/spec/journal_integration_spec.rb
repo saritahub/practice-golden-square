@@ -82,6 +82,16 @@ RSpec.describe 'Journal Entry' do
             diary.extract_phone_numbers
             expect(diary.phone_numbers).to eq(['07000000000'])
         end 
+
+        it 'Prompts to add a phone number if no numbers in diary entry' do 
+            diaryentry = JournalEntry.new('False phone number included...', 'The phone number is 0790909090992313')
+            diary = Journal.new 
+            diary.add_journal(diaryentry)
+            expect {diary.phone_numbers}.to raise_error('No phone numbers present in your diary entries!')
+        end 
+
+        
+
     end 
 
 
