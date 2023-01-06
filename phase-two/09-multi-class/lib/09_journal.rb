@@ -1,15 +1,20 @@
 # File: lib/09_journal.rb
 
-# require 'phase-two/09-multi-class/lib/09_journal_entry.rb' 
+require '09_todolist.rb'
 
 class Journal
     def initialize
         @all_entries = []
         @phone_numbers = []
+        @task_list = []
     end 
 
-    def add(entry)
+    def add_journal(entry)
         @all_entries.push(entry)
+    end 
+
+    def add_task(task)
+        @task_list.push(task)
     end 
 
     def all_entries
@@ -24,5 +29,9 @@ class Journal
 
     def phone_numbers
         @phone_numbers
+    end 
+    
+    def task_list 
+        @task_list     
     end 
 end 

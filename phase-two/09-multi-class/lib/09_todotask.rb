@@ -2,6 +2,10 @@
 
 class ToDoTask
     def initialize(task)
-        
+        @task = task 
     end
+
+    def task 
+        @task 
+    end 
 end
