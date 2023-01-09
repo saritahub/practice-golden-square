@@ -13,4 +13,8 @@ class MusicLibrary
     def all 
         @all_tracks
     end 
+
+    def search(keyword)
+        @all_tracks
+    end
 end
