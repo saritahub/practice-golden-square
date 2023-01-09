@@ -34,6 +34,13 @@ RSpec.describe 'Music Library Integration' do
             music_library.add(track)
             expect(music_library.search('Halo')).to eq([track])
         end 
+
+        it 'Returns the track that matches the keyword `Beyonce`' do
+            track = Track.new('Halo', 'Beyonce')
+            music_library = MusicLibrary.new 
+            music_library.add(track)
+            expect(music_library.search('Beyonce')).to eq([track])
+        end 
         
     end 
 end 

@@ -17,7 +17,7 @@ class MusicLibrary
 
     def search(keyword)
         @all_tracks.map do |track|
-          if track.title.downcase == keyword.downcase
+          if track.title.downcase == keyword.downcase || track.artist.downcase == keyword.downcase
             @matching_tracks.push(track)
             return @matching_tracks 
           else 
