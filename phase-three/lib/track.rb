@@ -7,10 +7,6 @@ class Track
     end 
 
     def matches?(keyword)
-        if keyword.downcase == @title.downcase || keyword.downcase == @artist.downcase
-            return true 
-        else
-            return false
-        end 
+        keyword.downcase == @title.downcase || keyword.downcase == @artist.downcase ? true : false 
     end 
 end 
