@@ -42,5 +42,14 @@ RSpec.describe 'Music Library Integration' do
             expect(music_library.search('Beyonce')).to eq([track])
         end 
         
+        it 'Only returns matching tracks when multiple added' do 
+            track_1 = Track.new('Halo', 'Beyonce')
+            track_2 = Track.new('Bluebird', 'Alexis Ffrench')
+            music_library = MusicLibrary.new 
+            music_library.add(track_1)
+            music_library.add(track_2)
+            expect(music_library.all).to eq([track_1, track_2])
+            expect(music_library.search('Halo')).to eq([track_1])
+        end 
     end 
 end 
