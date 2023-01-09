@@ -5,6 +5,14 @@ class Track
         @title = title
         @artist = artist 
     end 
+    
+    def title 
+        @title 
+    end 
+
+    def artist 
+        @artist
+    end 
 
     def matches?(keyword)
         keyword.downcase == @title.downcase || keyword.downcase == @artist.downcase ? true : false 
