@@ -15,6 +15,12 @@ RSpec.describe 'Track' do
                 track = Track.new('Halo', 'Beyonce')
                 expect(track.matches?('Beyonce')).to eq(true)
             end 
+
+            it 'Creates a track, and returns false if the keyword does not match the artist or title' do 
+                track = Track.new('Halo', 'Beyonce')
+                expect(track.matches?('Adele')).to eq(false)
+            end 
+            
         end 
     end 
 
