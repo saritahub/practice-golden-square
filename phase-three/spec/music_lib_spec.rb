@@ -43,5 +43,13 @@ RSpec.describe 'Music Library' do
             expect(music_library.all).to eq([track_double_1, track_double_2])
             expect(music_library.search('Halo')).to eq([track_double_1])
         end 
+
+        it 'Doubles: Returns an empty array if no that matching tracks' do
+            track_double = (double(:fake_track, title: 'Halo', artist: 'Beyonce', matches?: false))
+            music_library = MusicLibrary.new 
+            music_library.add(track_double)
+            expect(track_double.matches?('Pear')).to eq(false)
+            expect(music_library.search('Pear')).to eq([])
+        end 
     end 
 end 

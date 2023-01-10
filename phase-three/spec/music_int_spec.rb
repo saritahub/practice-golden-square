@@ -62,6 +62,5 @@ RSpec.describe 'Music Library Integration' do
             expect(track.matches?('Pear')).to eq(false)
             expect(music_library.search('Pear')).to eq([])
         end 
-
     end 
 end 
