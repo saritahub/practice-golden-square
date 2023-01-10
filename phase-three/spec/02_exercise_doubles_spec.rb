@@ -9,9 +9,9 @@ RSpec.describe "doubles" do
       expect(fake_object).to be
     end
   
-    xit "sets up a double with methods" do
+    it "sets up a double with methods" do
       # Set up your doubles here
-      fake_object = # ...
+      fake_object = double(:fake, speak: 'Meow', count_ears: 2, count_legs: 4)
   
       # Don't edit below
       expect(fake_object.speak).to eq "Meow"
