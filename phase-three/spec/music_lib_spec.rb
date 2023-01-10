@@ -11,5 +11,14 @@ RSpec.describe 'Music Library' do
             expect(music_library.all).to eq([track_double])
         end 
 
+        it 'Doubles: Adds two tracks, and returns them' do 
+            track_double_1 = (double(:fake_track, title: 'Halo', artist: 'Beyonce'))
+            track_double_2 = (double(:fake_track, title: 'Hello', artist: 'Adele'))
+            music_library = MusicLibrary.new 
+            music_library.add(track_double_1)
+            music_library.add(track_double_2)
+            expect(music_library.all).to eq([track_double_1, track_double_2])
+        end 
+
     end 
 end 
