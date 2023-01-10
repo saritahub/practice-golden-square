@@ -21,22 +21,26 @@ RSpec.describe 'Music Library' do
         end 
 
         it 'Doubles: Returns the track that matches the keyword `Halo`' do
-            track_double = (double(:fake_track, title: 'Halo', artist: 'Beyonce', matches?: true))
+            track_double = double(:fake_track, title: 'Halo', artist: 'Beyonce')
+            expect(track_double).to receive(:matches?).with('Halo').and_return(true)
             music_library = MusicLibrary.new 
             music_library.add(track_double)
             expect(music_library.search('Halo')).to eq([track_double])
         end 
 
         it 'Doubles: Returns the track that matches the keyword `Beyonce`' do
-            track_double = (double(:fake_track, title: 'Halo', artist: 'Beyonce', matches?: true))
+            track_double = (double(:fake_track, title: 'Halo', artist: 'Beyonce'))
+            expect(track_double).to receive(:matches?).with('Beyonce').and_return(true)
             music_library = MusicLibrary.new 
             music_library.add(track_double)
             expect(music_library.search('Beyonce')).to eq([track_double])
         end 
 
         it 'Doubles: Only returns matching tracks when multiple added' do 
-            track_double_1 = (double(:fake_track, title: 'Halo', artist: 'Beyonce', matches?: true))
-            track_double_2 = (double(:fake_track, title: 'Hello', artist: 'Adele', matches?: false))
+            track_double_1 = (double(:fake_track, title: 'Halo', artist: 'Beyonce'))
+            track_double_2 = (double(:fake_track, title: 'Hello', artist: 'Adele'))
+            expect(track_double_1).to receive(:matches?).with('Halo').and_return(true)
+            expect(track_double_2).to receive(:matches?).with('Halo').and_return(false)
             music_library = MusicLibrary.new 
             music_library.add(track_double_1)
             music_library.add(track_double_2)
@@ -45,10 +49,10 @@ RSpec.describe 'Music Library' do
         end 
 
         it 'Doubles: Returns an empty array if no that matching tracks' do
-            track_double = (double(:fake_track, title: 'Halo', artist: 'Beyonce', matches?: false))
+            track_double = (double(:fake_track, title: 'Halo', artist: 'Beyonce'))
+            expect(track_double).to receive(:matches?).with('Pear').and_return(false)
             music_library = MusicLibrary.new 
             music_library.add(track_double)
-            expect(track_double.matches?('Pear')).to eq(false)
             expect(music_library.search('Pear')).to eq([])
         end 
     end 
