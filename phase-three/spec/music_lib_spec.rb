@@ -26,5 +26,12 @@ RSpec.describe 'Music Library' do
             music_library.add(track_double)
             expect(music_library.search('Halo')).to eq([track_double])
         end 
+
+        it 'Doubles: Returns the track that matches the keyword `Beyonce`' do
+            track_double = (double(:fake_track, title: 'Halo', artist: 'Beyonce', matches?: true))
+            music_library = MusicLibrary.new 
+            music_library.add(track_double)
+            expect(music_library.search('Beyonce')).to eq([track_double])
+        end 
     end 
 end 
