@@ -15,14 +15,10 @@ class SecretDiary
                 entry.read
             end.join 
         end 
-      # Raises the error "Go away!" if the diary is locked
-      # Returns the diary's contents if the diary is unlocked
-      # The diary starts off locked
     end
   
     def lock
-      # Locks the diary
-      # Returns nothing
+        @locked = true 
     end
   
     def unlock

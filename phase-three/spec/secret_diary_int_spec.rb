@@ -16,4 +16,12 @@ RSpec.describe 'Secret Diary Integreation' do
         secret_diary.unlock
         expect(secret_diary.read).to eq('Beans for the soul')
     end 
+
+    it 'Unlocks then locks the diary' do 
+        diary = Diary.new('Beans for the soul')
+        secret_diary = SecretDiary.new(diary)
+        secret_diary.unlock
+        secret_diary.lock
+        expect(secret_diary.read).to eq('Go away!')
+    end 
 end 
