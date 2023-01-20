@@ -3,12 +3,15 @@
 class SecretDiary
     def initialize(diary) 
         @locked = true 
-        @diary_entries = []
-        @diary_entries.push(diary) 
+        @diary = diary 
     end
   
     def read
-        @locked == true ? 'Go away!' : @diary_entries.map { |entry| entry.read }.join 
+        if @locked == true
+            'Go away!'
+        else 
+            @diary.read
+        end 
     end
   
     def lock
