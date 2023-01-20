@@ -8,13 +8,7 @@ class SecretDiary
     end
   
     def read
-        if @locked == true 
-            return "Go away!"
-        else 
-            return @diary_entries.map do |entry|
-                entry.read
-            end.join 
-        end 
+        @locked == true ? 'Go away!' : @diary_entries.map { |entry| entry.read }.join 
     end
   
     def lock
