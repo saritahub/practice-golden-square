@@ -27,4 +27,16 @@ RSpec.describe StringRepeater do
         string_repeater.run 
     end 
 
+    it 'Returns the string 10 times' do 
+        io = double :io 
+        expect(io).to receive(:puts).with("Hello. I will repeat a string many times.\nPlease enter a string")
+        expect(io).to receive(:gets).and_return('Hi')
+        expect(io).to receive(:puts).with('Please enter a number of repeats')
+        expect(io).to receive(:gets).and_return('10')
+        expect(io).to receive(:puts).with("Here is your result:\n #{'Hi' * 10}")
+
+        string_repeater = StringRepeater.new(io)
+        string_repeater.run 
+    end 
+
 end 
