@@ -30,4 +30,18 @@ RSpec.describe 'Interactive Calc' do
         interactive_calc = InteractiveCalculator.new(io)
         interactive_calc.run 
     end 
+
+    it 'Requests two numbers, and returns the subtracted result as -2' do 
+        io = double :io 
+        expect(io).to receive(:puts).with('Hello. I will subtract two numbers.') 
+        expect(io).to receive(:puts).with('Please enter a number') 
+        expect(io).to receive(:gets).and_return('3')
+        expect(io).to receive(:puts).with('Please enter another number') 
+        expect(io).to receive(:gets).and_return('5')
+        expect(io).to receive(:puts).with('Here is your result:') 
+        expect(io).to receive(:puts).with('3 - 5 = -2') 
+
+        interactive_calc = InteractiveCalculator.new(io)
+        interactive_calc.run 
+    end 
 end 
