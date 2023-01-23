@@ -9,7 +9,7 @@ class StringRepeater
         @io.puts "Hello. I will repeat a string many times.\nPlease enter a string"
         input_string = @io.gets.chomp 
         @io.puts 'Please enter a number of repeats'
-        number_of_repeats = @io.gets.chomp
-        @io.puts "Here is your result:\n #{input_string}"
+        number_of_repeats = @io.gets.chomp.to_i
+        @io.puts "Here is your result:\n #{input_string * number_of_repeats}"
     end 
 end
